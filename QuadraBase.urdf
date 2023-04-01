@@ -1,0 +1,6172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="QuadraBase">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="4.6189E-18 0.0010215 0.048369"
+        rpy="0 0 0" />
+      <mass
+        value="4.6608" />
+      <inertia
+        ixx="0.028465"
+        ixy="-2.6749E-17"
+        ixz="5.3846E-17"
+        iyy="0.063209"
+        iyz="1.0087E-19"
+        izz="0.086799" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/base_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/base_link.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="IMU">
+    <inertial>
+      <origin
+        xyz="0.00077931 0.00054864 -0.014708"
+        rpy="0 0 0" />
+      <mass
+        value="0.014669" />
+      <inertia
+        ixx="2.6324E-06"
+        ixy="-1.2344E-08"
+        ixz="-1.0658E-08"
+        iyy="4.2034E-06"
+        iyz="1.2143E-09"
+        izz="5.9663E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/IMU.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0.54902 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/IMU.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Base_Fixed1"
+    type="fixed">
+    <origin
+      xyz="-0.002982 1.6372E-05 0.14911"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="IMU" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LF_HAA_Body">
+    <inertial>
+      <origin
+        xyz="-0.030155 -0.00025475 1.6899E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.15207" />
+      <inertia
+        ixx="0.00017089"
+        ixy="-1.0346E-07"
+        ixz="-1.23E-08"
+        iyy="9.0662E-05"
+        iyz="1.7736E-07"
+        izz="9.1058E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/LF_HAA_Body.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/LF_HAA_Body.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Base_Fixed2"
+    type="continuous">
+    <origin
+      xyz="0.3225 0.16 0.0589"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LF_HAA_Body" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="RF_HAA_Body">
+    <inertial>
+      <origin
+        xyz="-0.030155 -0.00025475 1.6899E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.15207" />
+      <inertia
+        ixx="0.00017089"
+        ixy="-1.0346E-07"
+        ixz="-1.23E-08"
+        iyy="9.0662E-05"
+        iyz="1.7736E-07"
+        izz="9.1058E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/RF_HAA_Body.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/RF_HAA_Body.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Base_Fixed3"
+    type="continuous">
+    <origin
+      xyz="0.3225 -0.16 0.0589"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RF_HAA_Body" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="LH_HAA_Body">
+    <inertial>
+      <origin
+        xyz="0.030155 0.00020402 0.00015348"
+        rpy="0 0 0" />
+      <mass
+        value="0.15207" />
+      <inertia
+        ixx="0.00017089"
+        ixy="-9.3338E-08"
+        ixz="-4.6288E-08"
+        iyy="9.0943E-05"
+        iyz="-2.5241E-07"
+        izz="9.0777E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/LH_HAA_Body.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/LH_HAA_Body.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Base_Fixed4"
+    type="continuous">
+    <origin
+      xyz="-0.3225 0.16 0.0589"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="LH_HAA_Body" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="RH_HAA_Body">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/RH_HAA_Body.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="meshes/RH_HAA_Body.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Base_Fixed5"
+    type="continuous">
+    <origin
+      xyz="-0.3225 -0.16 0.0589"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="RH_HAA_Body" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+<!--LF_LEG-->>
+<link
+  name="LF_HAA_Datui">
+  <inertial>
+    <origin
+      xyz="0.00995157219681538 -1.01771469115024E-17 -0.0544597643259552"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.67889694496913E-20"
+      ixz="4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="1.05165073448643E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HAA_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HAA_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_HAA_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HAA_Body" />
+  <child
+    link="LF_HAA_Datui" />
+  <axis
+    xyz="-1 0 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+</joint>
+<link
+  name="LF_L_Connector_Above">
+  <inertial>
+    <origin
+      xyz="-0.0178339113118395 7.81986417322814E-18 0.0305402356740448"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.68073456811383E-20"
+      ixz="4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="1.05034665327084E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_L_Connector_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_L_Connector_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed2"
+  type="fixed">
+  <origin
+    xyz="0.0277854835086549 0 -0.085"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HAA_Datui" />
+  <child
+    link="LF_L_Connector_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_L_Connector_Below">
+  <inertial>
+    <origin
+      xyz="0.00171451651379069 -0.000807761928284924 -0.00999999999999945"
+      rpy="0 0 0" />
+    <mass
+      value="0.722773062972937" />
+    <inertia
+      ixx="0.000218844404452249"
+      ixy="-6.04356986272875E-20"
+      ixz="2.90147471259191E-17"
+      iyy="0.0102838929998503"
+      iyz="5.72322855248971E-19"
+      izz="0.0104423137690375" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_L_Connector_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_L_Connector_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed3"
+  type="fixed">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_L_Connector_Above" />
+  <child
+    link="LF_L_Connector_Below" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_HFE_Front">
+  <inertial>
+    <origin
+      xyz="0.406450000009832 0.00120010336908472 -0.0165404509376503"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.1257958251045E-05"
+      ixy="1.77637345651318E-11"
+      ixz="5.11179124827281E-14"
+      iyy="3.85166848508483E-05"
+      iyz="-1.76688112346993E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed4"
+  type="fixed">
+  <origin
+    xyz="-0.204735483508655 -0.0012001034363081 -0.0200000000000002"
+    rpy="0 0 0" />
+  <parent
+    link="LF_L_Connector_Below" />
+  <child
+    link="LF_HFE_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_HFE_Behind">
+  <inertial>
+    <origin
+      xyz="-0.406449999989386 0.00120010336908475 -0.0165404509376531"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715904" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.77637345665256E-11"
+      ixz="5.11179067285728E-14"
+      iyy="3.85166848508483E-05"
+      iyz="-1.76688117746133E-13"
+      izz="2.8020782986136E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed6"
+  type="fixed">
+  <origin
+    xyz="0.208164516491345 -0.00120010343630815 -0.0199999999999999"
+    rpy="0 0 0" />
+  <parent
+    link="LF_L_Connector_Below" />
+  <child
+    link="LF_HFE_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_HFE_Above">
+  <inertial>
+    <origin
+      xyz="9.83976259675586E-12 -0.000600051785377822 0.0109595490623483"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.7763734567438E-11"
+      ixz="5.11179349179032E-14"
+      iyy="3.85166848508483E-05"
+      iyz="-1.76688151206817E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed8"
+  type="fixed">
+  <origin
+    xyz="0.00171451649134521 0 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="LF_L_Connector_Below" />
+  <child
+    link="LF_HFE_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_HFE_Below">
+  <inertial>
+    <origin
+      xyz="-0.00179434378588409 -8.21884248572559E-10 -0.118546756611554"
+      rpy="0 0 0" />
+    <mass
+      value="0.75766306900564" />
+    <inertia
+      ixx="0.00326332121209176"
+      ixy="-7.06627483207967E-07"
+      ixz="-1.33796298605684E-05"
+      iyy="0.00291089859220615"
+      iyz="-7.2662717229434E-08"
+      izz="0.00078934763344955" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_HFE_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_HFE_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HFE_Above" />
+  <child
+    link="LF_HFE_Below" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Motor_1">
+  <inertial>
+    <origin
+      xyz="-2.84694276887906E-05 0.0172464421387808 8.28830574443884E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335727" />
+    <inertia
+      ixx="8.64771098206459E-05"
+      ixy="2.13351298961956E-08"
+      ixz="-6.80488236622733E-09"
+      iyy="8.91906195308057E-05"
+      iyz="-5.08537585678835E-09"
+      izz="6.72138170007194E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed9"
+  type="fixed">
+  <origin
+    xyz="0 0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HFE_Below" />
+  <child
+    link="LF_Motor_1" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Capstan_1">
+  <inertial>
+    <origin
+      xyz="-3.76746996970155E-17 -0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.71547210516198E-20"
+      ixz="-1.07876996188051E-21"
+      iyy="8.59504262778746E-06"
+      iyz="-1.65953469935925E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Motor_1_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_Motor_1" />
+  <child
+    link="LF_Capstan_1" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Motor_2">
+  <inertial>
+    <origin
+      xyz="2.8469427688774E-05 -0.0172464421387808 8.2883057444319E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335727" />
+    <inertia
+      ixx="8.64771098206458E-05"
+      ixy="2.1335129896173E-08"
+      ixz="6.804882366285E-09"
+      iyy="8.91906195308056E-05"
+      iyz="5.08537585680575E-09"
+      izz="6.72138170007193E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed10"
+  type="fixed">
+  <origin
+    xyz="0 -0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HFE_Below" />
+  <child
+    link="LF_Motor_2" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Capstan_2">
+  <inertial>
+    <origin
+      xyz="4.46546743014459E-17 0.000212910430571603 -6.93889390390723E-18"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.60748009429312E-20"
+      ixz="1.70192843867696E-21"
+      iyy="8.59504262778746E-06"
+      iyz="-1.90930257772245E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Motor_2_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_Motor_2" />
+  <child
+    link="LF_Capstan_2" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Motor_3">
+  <inertial>
+    <origin
+      xyz="-2.84694277247259E-05 0.0172464421389081 8.28830576246609E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998336078" />
+    <inertia
+      ixx="8.64771098206678E-05"
+      ixy="2.1335129911101E-08"
+      ixz="-6.80488233073843E-09"
+      iyy="8.91906195308922E-05"
+      iyz="-5.08537586450316E-09"
+      izz="6.72138170007906E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed11"
+  type="fixed">
+  <origin
+    xyz="0 0.0454999999999997 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HFE_Below" />
+  <child
+    link="LF_Motor_3" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Capstan_3">
+  <inertial>
+    <origin
+      xyz="-3.67016514814742E-17 -0.000212910430571601 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.75537991388863E-20"
+      ixz="-1.8175514685208E-21"
+      iyy="8.59504262778746E-06"
+      iyz="-1.78029128632854E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Motor_3_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_Motor_3" />
+  <child
+    link="LF_Capstan_3" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Motor_4">
+  <inertial>
+    <origin
+      xyz="2.84694276887942E-05 -0.0172464421387808 8.28830574448047E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335727" />
+    <inertia
+      ixx="8.64771098206458E-05"
+      ixy="2.13351298961828E-08"
+      ixz="6.80488236627866E-09"
+      iyy="8.91906195308056E-05"
+      iyz="5.08537585676717E-09"
+      izz="6.72138170007193E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed12"
+  type="fixed">
+  <origin
+    xyz="0 -0.0454999999999999 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HFE_Below" />
+  <child
+    link="LF_Motor_4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Capstan_4">
+  <inertial>
+    <origin
+      xyz="2.42392447625433E-17 0.000212910430571603 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-2.6672147038007E-20"
+      ixz="3.38137068075237E-21"
+      iyy="8.59504262778745E-06"
+      iyz="-1.7936994536499E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Motor_4_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_Motor_4" />
+  <child
+    link="LF_Capstan_4" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_KFE_Datui">
+  <inertial>
+    <origin
+      xyz="0.0257818274469396 -3.04703122500163E-10 0.00939650209458728"
+      rpy="0 0 0" />
+    <mass
+      value="0.202362458638659" />
+    <inertia
+      ixx="0.000132325447511103"
+      ixy="1.36528546489957E-12"
+      ixz="-1.34286855560455E-05"
+      iyy="7.51965034680202E-05"
+      iyz="-5.2913660970952E-17"
+      izz="0.00017580289157642" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_KFE_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_KFE_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed13"
+  type="fixed">
+  <origin
+    xyz="-0.0324999999999999 0 -0.221126066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LF_HFE_Below" />
+  <child
+    link="LF_KFE_Datui" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_KFE_Diaobi">
+  <inertial>
+    <origin
+      xyz="0.00476532092562273 1.68242089305663E-17 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.943955315785952" />
+    <inertia
+      ixx="0.000558068791355092"
+      ixy="-2.9838471245487E-18"
+      ixz="-3.86181783113455E-18"
+      iyy="0.00782246388845469"
+      iyz="2.81195607335843E-19"
+      izz="0.00834209266816599" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_KFE_Diaobi.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_KFE_Diaobi.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_KFE_Diaobi_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_KFE_Datui" />
+  <child
+    link="LF_KFE_Diaobi" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Diaobi_Front">
+  <inertial>
+    <origin
+      xyz="0.4 0.0125000000000002 -0.0464987243569578"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="1.43583393892454E-19"
+      ixz="-1.44002087006007E-23"
+      iyy="6.54564446044404E-06"
+      iyz="1.42550377171952E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Diaobi_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Diaobi_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed14"
+  type="fixed">
+  <origin
+    xyz="-0.2 -0.0125000000000001 0.0464987243569579"
+    rpy="0 0 0" />
+  <parent
+    link="LF_KFE_Diaobi" />
+  <child
+    link="LF_Diaobi_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Diaobi_Behind">
+  <inertial>
+    <origin
+      xyz="0 9.37245886618668E-18 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="-1.05540517387078E-19"
+      ixz="-7.29640766733877E-23"
+      iyy="6.54564446044403E-06"
+      iyz="1.37275457705922E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Diaobi_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Diaobi_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed15"
+  type="fixed">
+  <origin
+    xyz="-0.2 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_KFE_Diaobi" />
+  <child
+    link="LF_Diaobi_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_KFE_Xiaotui">
+  <inertial>
+    <origin
+      xyz="0.0313594836044593 3.92896807026995E-17 -0.0941524543357563"
+      rpy="0 0 0" />
+    <mass
+      value="0.624300528757856" />
+    <inertia
+      ixx="0.00237261591954326"
+      ixy="-1.04615052791186E-19"
+      ixz="8.62921201903301E-06"
+      iyy="0.00212184695939608"
+      iyz="-2.10644365244622E-19"
+      izz="0.00063870678864782" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_KFE_Xiaotui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_KFE_Xiaotui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_KFE_Xiaotui_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_KFE_Datui" />
+  <child
+    link="LF_KFE_Xiaotui" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Motor_5">
+  <inertial>
+    <origin
+      xyz="-2.96146306401783E-05 0.0180183215090522 8.62170871201995E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.131176337566446" />
+    <inertia
+      ixx="8.52311483882423E-05"
+      ixy="2.13351299111335E-08"
+      ixz="-6.80488232753482E-09"
+      iyy="8.52073722372674E-05"
+      iyz="-5.08537586468511E-09"
+      izz="6.24557711088471E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed16"
+  type="fixed">
+  <origin
+    xyz="0.0325000000001289 0.0454999999999998 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LF_KFE_Xiaotui" />
+  <child
+    link="LF_Motor_5" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Capstan_5">
+  <inertial>
+    <origin
+      xyz="-4.10979550045953E-17 -0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.037824866213923" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-6.0176395701072E-22"
+      ixz="-1.2100623949713E-20"
+      iyy="8.59504262778747E-06"
+      iyz="-3.97802397075291E-20"
+      izz="4.94123760009561E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Motor_5_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_Motor_5" />
+  <child
+    link="LF_Capstan_5" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Motor_6">
+  <inertial>
+    <origin
+      xyz="2.91185421474633E-05 -0.0180183225749855 -1.01632331117041E-05"
+      rpy="0 0 0" />
+    <mass
+      value="0.13117634116664" />
+    <inertia
+      ixx="8.53953173334788E-05"
+      ixy="2.03278271161499E-08"
+      ixz="2.23549704736689E-07"
+      iyy="8.52073737330872E-05"
+      iyz="-8.24211811141112E-09"
+      izz="6.22916037441715E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Motor_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed17"
+  type="fixed">
+  <origin
+    xyz="0.0324999999999896 -0.0455000000000031 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LF_KFE_Xiaotui" />
+  <child
+    link="LF_Motor_6" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Capstan_6">
+  <inertial>
+    <origin
+      xyz="3.87373568252758E-17 0.000212910430571601 1.66533453693773E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-1.0287578693051E-21"
+      ixz="-6.17412792491292E-22"
+      iyy="8.59504262778745E-06"
+      iyz="7.18674772389821E-22"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Capstan_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Motor_6_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LF_Motor_6" />
+  <child
+    link="LF_Capstan_6" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="LF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LF_Foot_Connector">
+  <inertial>
+    <origin
+      xyz="-0.00829919885296231 -4.2443495546721E-10 -0.0112828904165752"
+      rpy="0 0 0" />
+    <mass
+      value="0.139447767552548" />
+    <inertia
+      ixx="5.13216221679282E-05"
+      ixy="-1.38520595288024E-12"
+      ixz="-6.34704530979302E-06"
+      iyy="2.80504226978665E-05"
+      iyz="-9.52188645344283E-11"
+      izz="6.15730851521786E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Foot_Connector.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Foot_Connector.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed18"
+  type="fixed">
+  <origin
+    xyz="0.03246562942307 0 -0.213626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LF_KFE_Xiaotui" />
+  <child
+    link="LF_Foot_Connector" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LF_Foot">
+  <inertial>
+    <origin
+      xyz="-0.00373405770197849 0.00025586347795087 0.0117351082412912"
+      rpy="0 0 0" />
+    <mass
+      value="0.266242556925293" />
+    <inertia
+      ixx="9.33398233450484E-05"
+      ixy="-6.0329647558344E-08"
+      ixz="-2.67239059303291E-05"
+      iyy="9.76642768595375E-05"
+      iyz="8.82432995378223E-08"
+      izz="0.000106860385565831" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Foot.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LF_Foot.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LF_Fixed20"
+  type="fixed">
+  <origin
+    xyz="0.00960813281122834 0 -0.0464353485777582"
+    rpy="0 0 0" />
+  <parent
+    link="LF_Foot_Connector" />
+  <child
+    link="LF_Foot" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<!--RF_LEG-->>
+<link
+  name="RF_HAA_Datui">
+  <inertial>
+    <origin
+      xyz="0.00995157219681538 -1.01771469115024E-17 -0.0544597643259552"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.67889694496913E-20"
+      ixz="4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="1.05165073448643E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HAA_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HAA_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_HAA_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HAA_Body" />
+  <child
+    link="RF_HAA_Datui" />
+  <axis
+    xyz="-1 0 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+</joint>
+<link
+  name="RF_L_Connector_Above">
+  <inertial>
+    <origin
+      xyz="-0.0178339113118395 7.81986417322814E-18 0.0305402356740448"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.68073456811383E-20"
+      ixz="4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="1.05034665327084E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_L_Connector_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_L_Connector_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed2"
+  type="fixed">
+  <origin
+    xyz="0.0277854835086549 0 -0.085"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HAA_Datui" />
+  <child
+    link="RF_L_Connector_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_L_Connector_Below">
+  <inertial>
+    <origin
+      xyz="0.00171451651379069 -0.000807761928284924 -0.00999999999999945"
+      rpy="0 0 0" />
+    <mass
+      value="0.722773062972937" />
+    <inertia
+      ixx="0.000218844404452249"
+      ixy="-6.04356986272875E-20"
+      ixz="2.90147471259191E-17"
+      iyy="0.0102838929998503"
+      iyz="5.72322855248971E-19"
+      izz="0.0104423137690375" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_L_Connector_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_L_Connector_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed3"
+  type="fixed">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_L_Connector_Above" />
+  <child
+    link="RF_L_Connector_Below" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_HFE_Front">
+  <inertial>
+    <origin
+      xyz="0.406450000009832 0.00120010336908472 -0.0165404509376503"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.1257958251045E-05"
+      ixy="1.77637345651318E-11"
+      ixz="5.11179124827281E-14"
+      iyy="3.85166848508483E-05"
+      iyz="-1.76688112346993E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed4"
+  type="fixed">
+  <origin
+    xyz="-0.204735483508655 -0.0012001034363081 -0.0200000000000002"
+    rpy="0 0 0" />
+  <parent
+    link="RF_L_Connector_Below" />
+  <child
+    link="RF_HFE_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_HFE_Behind">
+  <inertial>
+    <origin
+      xyz="-0.406449999989386 0.00120010336908475 -0.0165404509376531"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715904" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.77637345665256E-11"
+      ixz="5.11179067285728E-14"
+      iyy="3.85166848508483E-05"
+      iyz="-1.76688117746133E-13"
+      izz="2.8020782986136E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed6"
+  type="fixed">
+  <origin
+    xyz="0.208164516491345 -0.00120010343630815 -0.0199999999999999"
+    rpy="0 0 0" />
+  <parent
+    link="RF_L_Connector_Below" />
+  <child
+    link="RF_HFE_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_HFE_Above">
+  <inertial>
+    <origin
+      xyz="9.83976259675586E-12 -0.000600051785377822 0.0109595490623483"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.7763734567438E-11"
+      ixz="5.11179349179032E-14"
+      iyy="3.85166848508483E-05"
+      iyz="-1.76688151206817E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed8"
+  type="fixed">
+  <origin
+    xyz="0.00171451649134521 0 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="RF_L_Connector_Below" />
+  <child
+    link="RF_HFE_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_HFE_Below">
+  <inertial>
+    <origin
+      xyz="-0.00179434378588409 -8.21884248572559E-10 -0.118546756611554"
+      rpy="0 0 0" />
+    <mass
+      value="0.75766306900564" />
+    <inertia
+      ixx="0.00326332121209176"
+      ixy="-7.06627483207967E-07"
+      ixz="-1.33796298605684E-05"
+      iyy="0.00291089859220615"
+      iyz="-7.2662717229434E-08"
+      izz="0.00078934763344955" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_HFE_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_HFE_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HFE_Above" />
+  <child
+    link="RF_HFE_Below" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Motor_1">
+  <inertial>
+    <origin
+      xyz="-2.84694276887906E-05 0.0172464421387808 8.28830574443884E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335727" />
+    <inertia
+      ixx="8.64771098206459E-05"
+      ixy="2.13351298961956E-08"
+      ixz="-6.80488236622733E-09"
+      iyy="8.91906195308057E-05"
+      iyz="-5.08537585678835E-09"
+      izz="6.72138170007194E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed9"
+  type="fixed">
+  <origin
+    xyz="0 0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HFE_Below" />
+  <child
+    link="RF_Motor_1" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Capstan_1">
+  <inertial>
+    <origin
+      xyz="-3.76746996970155E-17 -0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.71547210516198E-20"
+      ixz="-1.07876996188051E-21"
+      iyy="8.59504262778746E-06"
+      iyz="-1.65953469935925E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Motor_1_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_Motor_1" />
+  <child
+    link="RF_Capstan_1" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Motor_2">
+  <inertial>
+    <origin
+      xyz="2.8469427688774E-05 -0.0172464421387808 8.2883057444319E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335727" />
+    <inertia
+      ixx="8.64771098206458E-05"
+      ixy="2.1335129896173E-08"
+      ixz="6.804882366285E-09"
+      iyy="8.91906195308056E-05"
+      iyz="5.08537585680575E-09"
+      izz="6.72138170007193E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed10"
+  type="fixed">
+  <origin
+    xyz="0 -0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HFE_Below" />
+  <child
+    link="RF_Motor_2" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Capstan_2">
+  <inertial>
+    <origin
+      xyz="4.46546743014459E-17 0.000212910430571603 -6.93889390390723E-18"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.60748009429312E-20"
+      ixz="1.70192843867696E-21"
+      iyy="8.59504262778746E-06"
+      iyz="-1.90930257772245E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Motor_2_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_Motor_2" />
+  <child
+    link="RF_Capstan_2" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Motor_3">
+  <inertial>
+    <origin
+      xyz="-2.84694277247259E-05 0.0172464421389081 8.28830576246609E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998336078" />
+    <inertia
+      ixx="8.64771098206678E-05"
+      ixy="2.1335129911101E-08"
+      ixz="-6.80488233073843E-09"
+      iyy="8.91906195308922E-05"
+      iyz="-5.08537586450316E-09"
+      izz="6.72138170007906E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed11"
+  type="fixed">
+  <origin
+    xyz="0 0.0454999999999997 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HFE_Below" />
+  <child
+    link="RF_Motor_3" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Capstan_3">
+  <inertial>
+    <origin
+      xyz="-3.67016514814742E-17 -0.000212910430571601 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.75537991388863E-20"
+      ixz="-1.8175514685208E-21"
+      iyy="8.59504262778746E-06"
+      iyz="-1.78029128632854E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Motor_3_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_Motor_3" />
+  <child
+    link="RF_Capstan_3" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Motor_4">
+  <inertial>
+    <origin
+      xyz="2.84694276887942E-05 -0.0172464421387808 8.28830574448047E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335727" />
+    <inertia
+      ixx="8.64771098206458E-05"
+      ixy="2.13351298961828E-08"
+      ixz="6.80488236627866E-09"
+      iyy="8.91906195308056E-05"
+      iyz="5.08537585676717E-09"
+      izz="6.72138170007193E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed12"
+  type="fixed">
+  <origin
+    xyz="0 -0.0454999999999999 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HFE_Below" />
+  <child
+    link="RF_Motor_4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Capstan_4">
+  <inertial>
+    <origin
+      xyz="2.42392447625433E-17 0.000212910430571603 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-2.6672147038007E-20"
+      ixz="3.38137068075237E-21"
+      iyy="8.59504262778745E-06"
+      iyz="-1.7936994536499E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Motor_4_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_Motor_4" />
+  <child
+    link="RF_Capstan_4" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_KFE_Datui">
+  <inertial>
+    <origin
+      xyz="0.0257818274469396 -3.04703122500163E-10 0.00939650209458728"
+      rpy="0 0 0" />
+    <mass
+      value="0.202362458638659" />
+    <inertia
+      ixx="0.000132325447511103"
+      ixy="1.36528546489957E-12"
+      ixz="-1.34286855560455E-05"
+      iyy="7.51965034680202E-05"
+      iyz="-5.2913660970952E-17"
+      izz="0.00017580289157642" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_KFE_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_KFE_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed13"
+  type="fixed">
+  <origin
+    xyz="-0.0324999999999999 0 -0.221126066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RF_HFE_Below" />
+  <child
+    link="RF_KFE_Datui" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_KFE_Diaobi">
+  <inertial>
+    <origin
+      xyz="0.00476532092562273 1.68242089305663E-17 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.943955315785952" />
+    <inertia
+      ixx="0.000558068791355092"
+      ixy="-2.9838471245487E-18"
+      ixz="-3.86181783113455E-18"
+      iyy="0.00782246388845469"
+      iyz="2.81195607335843E-19"
+      izz="0.00834209266816599" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_KFE_Diaobi.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_KFE_Diaobi.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_KFE_Diaobi_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_KFE_Datui" />
+  <child
+    link="RF_KFE_Diaobi" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Diaobi_Front">
+  <inertial>
+    <origin
+      xyz="0.4 0.0125000000000002 -0.0464987243569578"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="1.43583393892454E-19"
+      ixz="-1.44002087006007E-23"
+      iyy="6.54564446044404E-06"
+      iyz="1.42550377171952E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Diaobi_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Diaobi_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed14"
+  type="fixed">
+  <origin
+    xyz="-0.2 -0.0125000000000001 0.0464987243569579"
+    rpy="0 0 0" />
+  <parent
+    link="RF_KFE_Diaobi" />
+  <child
+    link="RF_Diaobi_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Diaobi_Behind">
+  <inertial>
+    <origin
+      xyz="0 9.37245886618668E-18 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="-1.05540517387078E-19"
+      ixz="-7.29640766733877E-23"
+      iyy="6.54564446044403E-06"
+      iyz="1.37275457705922E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Diaobi_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Diaobi_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed15"
+  type="fixed">
+  <origin
+    xyz="-0.2 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_KFE_Diaobi" />
+  <child
+    link="RF_Diaobi_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_KFE_Xiaotui">
+  <inertial>
+    <origin
+      xyz="0.0313594836044593 3.92896807026995E-17 -0.0941524543357563"
+      rpy="0 0 0" />
+    <mass
+      value="0.624300528757856" />
+    <inertia
+      ixx="0.00237261591954326"
+      ixy="-1.04615052791186E-19"
+      ixz="8.62921201903301E-06"
+      iyy="0.00212184695939608"
+      iyz="-2.10644365244622E-19"
+      izz="0.00063870678864782" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_KFE_Xiaotui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_KFE_Xiaotui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_KFE_Xiaotui_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_KFE_Datui" />
+  <child
+    link="RF_KFE_Xiaotui" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Motor_5">
+  <inertial>
+    <origin
+      xyz="-2.96146306401783E-05 0.0180183215090522 8.62170871201995E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.131176337566446" />
+    <inertia
+      ixx="8.52311483882423E-05"
+      ixy="2.13351299111335E-08"
+      ixz="-6.80488232753482E-09"
+      iyy="8.52073722372674E-05"
+      iyz="-5.08537586468511E-09"
+      izz="6.24557711088471E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed16"
+  type="fixed">
+  <origin
+    xyz="0.0325000000001289 0.0454999999999998 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RF_KFE_Xiaotui" />
+  <child
+    link="RF_Motor_5" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Capstan_5">
+  <inertial>
+    <origin
+      xyz="-4.10979550045953E-17 -0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.037824866213923" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-6.0176395701072E-22"
+      ixz="-1.2100623949713E-20"
+      iyy="8.59504262778747E-06"
+      iyz="-3.97802397075291E-20"
+      izz="4.94123760009561E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Motor_5_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_Motor_5" />
+  <child
+    link="RF_Capstan_5" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Motor_6">
+  <inertial>
+    <origin
+      xyz="2.91185421474633E-05 -0.0180183225749855 -1.01632331117041E-05"
+      rpy="0 0 0" />
+    <mass
+      value="0.13117634116664" />
+    <inertia
+      ixx="8.53953173334788E-05"
+      ixy="2.03278271161499E-08"
+      ixz="2.23549704736689E-07"
+      iyy="8.52073737330872E-05"
+      iyz="-8.24211811141112E-09"
+      izz="6.22916037441715E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Motor_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed17"
+  type="fixed">
+  <origin
+    xyz="0.0324999999999896 -0.0455000000000031 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RF_KFE_Xiaotui" />
+  <child
+    link="RF_Motor_6" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Capstan_6">
+  <inertial>
+    <origin
+      xyz="3.87373568252758E-17 0.000212910430571601 1.66533453693773E-16"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-1.0287578693051E-21"
+      ixz="-6.17412792491292E-22"
+      iyy="8.59504262778745E-06"
+      iyz="7.18674772389821E-22"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Capstan_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Motor_6_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RF_Motor_6" />
+  <child
+    link="RF_Capstan_6" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="RF_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RF_Foot_Connector">
+  <inertial>
+    <origin
+      xyz="-0.00829919885296231 -4.2443495546721E-10 -0.0112828904165752"
+      rpy="0 0 0" />
+    <mass
+      value="0.139447767552548" />
+    <inertia
+      ixx="5.13216221679282E-05"
+      ixy="-1.38520595288024E-12"
+      ixz="-6.34704530979302E-06"
+      iyy="2.80504226978665E-05"
+      iyz="-9.52188645344283E-11"
+      izz="6.15730851521786E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Foot_Connector.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Foot_Connector.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed18"
+  type="fixed">
+  <origin
+    xyz="0.03246562942307 0 -0.213626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RF_KFE_Xiaotui" />
+  <child
+    link="RF_Foot_Connector" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RF_Foot">
+  <inertial>
+    <origin
+      xyz="-0.00373405770197849 0.00025586347795087 0.0117351082412912"
+      rpy="0 0 0" />
+    <mass
+      value="0.266242556925293" />
+    <inertia
+      ixx="9.33398233450484E-05"
+      ixy="-6.0329647558344E-08"
+      ixz="-2.67239059303291E-05"
+      iyy="9.76642768595375E-05"
+      iyz="8.82432995378223E-08"
+      izz="0.000106860385565831" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Foot.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RF_Foot.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RF_Fixed20"
+  type="fixed">
+  <origin
+    xyz="0.00960813281122834 0 -0.0464353485777582"
+    rpy="0 0 0" />
+  <parent
+    link="RF_Foot_Connector" />
+  <child
+    link="RF_Foot" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<!--LH_LEG-->>
+<link
+  name="LH_HAA_Datui">
+  <inertial>
+    <origin
+      xyz="-0.00995157219681539 1.00262723443165E-17 -0.0544597643259552"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.67501486898644E-20"
+      ixz="-4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="-1.05151075432513E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HAA_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HAA_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_HAA_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HAA_Body" />
+  <child
+    link="LH_HAA_Datui" />
+  <axis
+    xyz="1 0 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+</joint>
+<link
+  name="LH_L_Connector_Above">
+  <inertial>
+    <origin
+      xyz="0.0178339113118395 -7.74943865062349E-18 0.0305402356740448"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.68168440809911E-20"
+      ixz="-4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="-1.05002754593606E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_L_Connector_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_L_Connector_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed2"
+  type="fixed">
+  <origin
+    xyz="-0.0277854835086549 0 -0.085"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HAA_Datui" />
+  <child
+    link="LH_L_Connector_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_L_Connector_Below">
+  <inertial>
+    <origin
+      xyz="-0.0017145165137907 0.000807761928284924 -0.00999999999999947"
+      rpy="0 0 0" />
+    <mass
+      value="0.722773062972937" />
+    <inertia
+      ixx="0.000218844404452249"
+      ixy="-6.04356986272879E-20"
+      ixz="-2.90148237350415E-17"
+      iyy="0.0102838929998503"
+      iyz="-5.7246244197734E-19"
+      izz="0.0104423137690376" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_L_Connector_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_L_Connector_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed3"
+  type="fixed">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_L_Connector_Above" />
+  <child
+    link="LH_L_Connector_Below" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_HFE_Front">
+  <inertial>
+    <origin
+      xyz="-0.406450000009832 -0.00120010336908471 -0.0165404509376503"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.1257958251045E-05"
+      ixy="1.77637345651425E-11"
+      ixz="-5.11179124794248E-14"
+      iyy="3.85166848508483E-05"
+      iyz="1.76688112331505E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed4"
+  type="fixed">
+  <origin
+    xyz="0.204735483508655 0.0012001034363081 -0.0200000000000002"
+    rpy="0 0 0" />
+  <parent
+    link="LH_L_Connector_Below" />
+  <child
+    link="LH_HFE_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_HFE_Behind">
+  <inertial>
+    <origin
+      xyz="0.406449999989386 -0.00120010336908475 -0.0165404509376531"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715904" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.77637345665263E-11"
+      ixz="-5.1117906749205E-14"
+      iyy="3.85166848508482E-05"
+      iyz="1.7668811773416E-13"
+      izz="2.8020782986136E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed6"
+  type="fixed">
+  <origin
+    xyz="-0.208164516491345 0.00120010343630815 -0.0199999999999999"
+    rpy="0 0 0" />
+  <parent
+    link="LH_L_Connector_Below" />
+  <child
+    link="LH_HFE_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_HFE_Above">
+  <inertial>
+    <origin
+      xyz="-9.83976261053748E-12 0.000600051785377822 0.0109595490623483"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.7763734567438E-11"
+      ixz="-5.11179348881914E-14"
+      iyy="3.85166848508483E-05"
+      iyz="1.76688151191961E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed8"
+  type="fixed">
+  <origin
+    xyz="-0.00171451649134521 0 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="LH_L_Connector_Below" />
+  <child
+    link="LH_HFE_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_HFE_Below">
+  <inertial>
+    <origin
+      xyz="0.00179434378588409 8.21884249496718E-10 -0.118546756611554"
+      rpy="0 0 0" />
+    <mass
+      value="0.757663069005639" />
+    <inertia
+      ixx="0.00326332121209176"
+      ixy="-7.06627483207968E-07"
+      ixz="1.33796298605684E-05"
+      iyy="0.00291089859220615"
+      iyz="7.26627172294031E-08"
+      izz="0.00078934763344955" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_HFE_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_HFE_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HFE_Above" />
+  <child
+    link="LH_HFE_Below" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Motor_1">
+  <inertial>
+    <origin
+      xyz="2.84694276911183E-05 -0.0172464421387718 8.28830574507028E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335703" />
+    <inertia
+      ixx="8.64771098206454E-05"
+      ixy="2.13351298975178E-08"
+      ixz="6.80488236757552E-09"
+      iyy="8.91906195308005E-05"
+      iyz="5.08537585712449E-09"
+      izz="6.7213817000714E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed9"
+  type="fixed">
+  <origin
+    xyz="0 -0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HFE_Below" />
+  <child
+    link="LH_Motor_1" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Capstan_1">
+  <inertial>
+    <origin
+      xyz="3.76448143253175E-17 0.000212910430571603 6.93889390390723E-18"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.71547713132994E-20"
+      ixz="1.08742395552527E-21"
+      iyy="8.59504262778746E-06"
+      iyz="1.66244094728619E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Motor_1_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_Motor_1" />
+  <child
+    link="LH_Capstan_1" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Motor_2">
+  <inertial>
+    <origin
+      xyz="-2.84694276911007E-05 0.0172464421387717 8.2883057450911E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335703" />
+    <inertia
+      ixx="8.64771098206452E-05"
+      ixy="2.13351298974955E-08"
+      ixz="-6.80488236763334E-09"
+      iyy="8.91906195308005E-05"
+      iyz="-5.08537585714134E-09"
+      izz="6.72138170007139E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed10"
+  type="fixed">
+  <origin
+    xyz="0 0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HFE_Below" />
+  <child
+    link="LH_Motor_2" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Capstan_2">
+  <inertial>
+    <origin
+      xyz="-4.46515537405459E-17 -0.000212910430571606 -6.93889390390723E-18"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.60765741447297E-20"
+      ixz="-1.70519141988728E-21"
+      iyy="8.59504262778746E-06"
+      iyz="1.90986640358609E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Motor_2_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_Motor_2" />
+  <child
+    link="LH_Capstan_2" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Motor_3">
+  <inertial>
+    <origin
+      xyz="2.84694277270512E-05 -0.017246442138899 8.28830576315998E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998336053" />
+    <inertia
+      ixx="8.64771098206673E-05"
+      ixy="2.13351299124234E-08"
+      ixz="6.80488233208718E-09"
+      iyy="8.9190619530887E-05"
+      iyz="5.08537586483973E-09"
+      izz="6.72138170007853E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed11"
+  type="fixed">
+  <origin
+    xyz="0 -0.0454999999999997 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HFE_Below" />
+  <child
+    link="LH_Motor_3" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Capstan_3">
+  <inertial>
+    <origin
+      xyz="3.66997311363045E-17 0.000212910430571601 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.75542240744915E-20"
+      ixz="1.82031790911216E-21"
+      iyy="8.59504262778746E-06"
+      iyz="1.78050908996467E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Motor_3_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_Motor_3" />
+  <child
+    link="LH_Capstan_3" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Motor_4">
+  <inertial>
+    <origin
+      xyz="-2.84694276911209E-05 0.0172464421387718 8.28830574514661E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335703" />
+    <inertia
+      ixx="8.64771098206453E-05"
+      ixy="2.13351298975048E-08"
+      ixz="-6.80488236762726E-09"
+      iyy="8.91906195308005E-05"
+      iyz="-5.08537585710314E-09"
+      izz="6.7213817000714E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed12"
+  type="fixed">
+  <origin
+    xyz="0 0.0454999999999999 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HFE_Below" />
+  <child
+    link="LH_Motor_4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Capstan_4">
+  <inertial>
+    <origin
+      xyz="-2.42538873944591E-17 -0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-2.6672554496561E-20"
+      ixz="-3.38059040263686E-21"
+      iyy="8.59504262778745E-06"
+      iyz="1.79388615936177E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Motor_4_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_Motor_4" />
+  <child
+    link="LH_Capstan_4" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_KFE_Datui">
+  <inertial>
+    <origin
+      xyz="-0.0257818274469396 3.0470312190288E-10 0.00939650209458728"
+      rpy="0 0 0" />
+    <mass
+      value="0.202362458638659" />
+    <inertia
+      ixx="0.000132325447511103"
+      ixy="1.36528546659981E-12"
+      ixz="1.34286855560455E-05"
+      iyy="7.51965034680202E-05"
+      iyz="5.29132692776072E-17"
+      izz="0.00017580289157642" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_KFE_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_KFE_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed13"
+  type="fixed">
+  <origin
+    xyz="0.0324999999999999 0 -0.221126066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LH_HFE_Below" />
+  <child
+    link="LH_KFE_Datui" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_KFE_Diaobi">
+  <inertial>
+    <origin
+      xyz="-0.00476532092562274 -9.4481443753062E-18 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.943955315785952" />
+    <inertia
+      ixx="0.000558068791355092"
+      ixy="-2.97884443948503E-18"
+      ixz="3.86339464986888E-18"
+      iyy="0.00782246388845469"
+      iyz="-2.81221778269262E-19"
+      izz="0.00834209266816599" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_KFE_Diaobi.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_KFE_Diaobi.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_KFE_Diaobi_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_KFE_Datui" />
+  <child
+    link="LH_KFE_Diaobi" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Diaobi_Front">
+  <inertial>
+    <origin
+      xyz="-0.4 -0.0125000000000002 -0.0464987243569578"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="1.43583393892454E-19"
+      ixz="1.44002087006007E-23"
+      iyy="6.54564446044404E-06"
+      iyz="-1.42550377171952E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Diaobi_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Diaobi_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed14"
+  type="fixed">
+  <origin
+    xyz="0.2 0.0125000000000001 0.0464987243569579"
+    rpy="0 0 0" />
+  <parent
+    link="LH_KFE_Diaobi" />
+  <child
+    link="LH_Diaobi_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Diaobi_Behind">
+  <inertial>
+    <origin
+      xyz="0 -1.32860127036638E-17 2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="-1.05540517387078E-19"
+      ixz="7.29640766734117E-23"
+      iyy="6.54564446044403E-06"
+      iyz="-1.37275457705922E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Diaobi_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Diaobi_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed15"
+  type="fixed">
+  <origin
+    xyz="0.2 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_KFE_Diaobi" />
+  <child
+    link="LH_Diaobi_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_KFE_Xiaotui">
+  <inertial>
+    <origin
+      xyz="-0.0313594836044593 -3.93512867691591E-17 -0.0941524543357563"
+      rpy="0 0 0" />
+    <mass
+      value="0.624300528757856" />
+    <inertia
+      ixx="0.00237261591954326"
+      ixy="-1.04413278809716E-19"
+      ixz="-8.629212019033E-06"
+      iyy="0.00212184695939608"
+      iyz="1.93251590556859E-19"
+      izz="0.00063870678864782" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_KFE_Xiaotui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_KFE_Xiaotui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_KFE_Xiaotui_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_KFE_Datui" />
+  <child
+    link="LH_KFE_Xiaotui" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Motor_5">
+  <inertial>
+    <origin
+      xyz="2.96146306425992E-05 -0.0180183215090429 8.62170871268608E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.131176337566422" />
+    <inertia
+      ixx="8.52311483882417E-05"
+      ixy="2.13351299124561E-08"
+      ixz="6.80488232888342E-09"
+      iyy="8.52073722372623E-05"
+      iyz="5.08537586502064E-09"
+      izz="6.24557711088418E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed16"
+  type="fixed">
+  <origin
+    xyz="-0.0325000000001289 -0.0454999999999998 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LH_KFE_Xiaotui" />
+  <child
+    link="LH_Motor_5" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Capstan_5">
+  <inertial>
+    <origin
+      xyz="4.11184786936018E-17 0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.037824866213923" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-6.01035242465377E-22"
+      ixz="1.21014751622026E-20"
+      iyy="8.59504262778747E-06"
+      iyz="3.97791878432396E-20"
+      izz="4.94123760009561E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Motor_5_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_Motor_5" />
+  <child
+    link="LH_Capstan_5" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Motor_6">
+  <inertial>
+    <origin
+      xyz="-2.91185421498602E-05 0.0180183225749763 -1.01632331126478E-05"
+      rpy="0 0 0" />
+    <mass
+      value="0.131176341166616" />
+    <inertia
+      ixx="8.53953173334779E-05"
+      ixy="2.03278271174379E-08"
+      ixz="-2.23549704734873E-07"
+      iyy="8.5207373733082E-05"
+      iyz="8.24211811190289E-09"
+      izz="6.22916037441665E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Motor_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed17"
+  type="fixed">
+  <origin
+    xyz="-0.0324999999999896 0.0455000000000031 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LH_KFE_Xiaotui" />
+  <child
+    link="LH_Motor_6" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Capstan_6">
+  <inertial>
+    <origin
+      xyz="-3.8747798702135E-17 -0.000212910430571601 5.55111512312578E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-1.02850097863627E-21"
+      ixz="6.12731123798228E-22"
+      iyy="8.59504262778745E-06"
+      iyz="-7.18235042292171E-22"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Capstan_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Motor_6_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="LH_Motor_6" />
+  <child
+    link="LH_Capstan_6" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="LH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="LH_Foot_Connector">
+  <inertial>
+    <origin
+      xyz="0.00829919885296231 4.24434955479711E-10 -0.0112828904165752"
+      rpy="0 0 0" />
+    <mass
+      value="0.139447767552548" />
+    <inertia
+      ixx="5.13216221679282E-05"
+      ixy="-1.38520595303468E-12"
+      ixz="6.34704530979302E-06"
+      iyy="2.80504226978665E-05"
+      iyz="9.52188645345139E-11"
+      izz="6.15730851521786E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Foot_Connector.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Foot_Connector.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed18"
+  type="fixed">
+  <origin
+    xyz="-0.03246562942307 0 -0.213626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="LH_KFE_Xiaotui" />
+  <child
+    link="LH_Foot_Connector" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="LH_Foot">
+  <inertial>
+    <origin
+      xyz="0.0037340577019785 -0.000255863477950871 0.0117351082412911"
+      rpy="0 0 0" />
+    <mass
+      value="0.266242556925293" />
+    <inertia
+      ixx="9.33398233450484E-05"
+      ixy="-6.0329647558344E-08"
+      ixz="2.67239059303291E-05"
+      iyy="9.76642768595375E-05"
+      iyz="-8.82432995378221E-08"
+      izz="0.000106860385565831" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Foot.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/LH_Foot.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="LH_Fixed20"
+  type="fixed">
+  <origin
+    xyz="-0.00960813281122834 0 -0.0464353485777582"
+    rpy="0 0 0" />
+  <parent
+    link="LH_Foot_Connector" />
+  <child
+    link="LH_Foot" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<!--RH_LEG-->
+<link
+  name="RH_HAA_Datui">
+  <inertial>
+    <origin
+      xyz="-0.00995157219681539 1.00262723443165E-17 -0.0544597643259552"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.67501486898644E-20"
+      ixz="-4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="-1.05151075432513E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HAA_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HAA_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_HAA_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HAA_Body" />
+  <child
+    link="RH_HAA_Datui" />
+  <axis
+    xyz="1 0 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+</joint>
+<link
+  name="RH_L_Connector_Above">
+  <inertial>
+    <origin
+      xyz="0.0178339113118395 -7.74943865062349E-18 0.0305402356740448"
+      rpy="0 0 0" />
+    <mass
+      value="0.152131345907502" />
+    <inertia
+      ixx="0.000229148422228345"
+      ixy="-1.68168440809911E-20"
+      ixz="-4.16556224871978E-05"
+      iyy="0.000199615233225149"
+      iyz="-1.05002754593606E-19"
+      izz="0.000103921546492715" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_L_Connector_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.0392156862745098 0.490196078431373 0.709803921568627 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_L_Connector_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed2"
+  type="fixed">
+  <origin
+    xyz="-0.0277854835086549 0 -0.085"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HAA_Datui" />
+  <child
+    link="RH_L_Connector_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_L_Connector_Below">
+  <inertial>
+    <origin
+      xyz="-0.0017145165137907 0.000807761928284924 -0.00999999999999947"
+      rpy="0 0 0" />
+    <mass
+      value="0.722773062972937" />
+    <inertia
+      ixx="0.000218844404452249"
+      ixy="-6.04356986272879E-20"
+      ixz="-2.90148237350415E-17"
+      iyy="0.0102838929998503"
+      iyz="-5.7246244197734E-19"
+      izz="0.0104423137690376" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_L_Connector_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_L_Connector_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed3"
+  type="fixed">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_L_Connector_Above" />
+  <child
+    link="RH_L_Connector_Below" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_HFE_Front">
+  <inertial>
+    <origin
+      xyz="-0.406450000009832 -0.00120010336908471 -0.0165404509376503"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.1257958251045E-05"
+      ixy="1.77637345651425E-11"
+      ixz="-5.11179124794248E-14"
+      iyy="3.85166848508483E-05"
+      iyz="1.76688112331505E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed4"
+  type="fixed">
+  <origin
+    xyz="0.204735483508655 0.0012001034363081 -0.0200000000000002"
+    rpy="0 0 0" />
+  <parent
+    link="RH_L_Connector_Below" />
+  <child
+    link="RH_HFE_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_HFE_Behind">
+  <inertial>
+    <origin
+      xyz="0.406449999989386 -0.00120010336908475 -0.0165404509376531"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715904" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.77637345665263E-11"
+      ixz="-5.1117906749205E-14"
+      iyy="3.85166848508482E-05"
+      iyz="1.7668811773416E-13"
+      izz="2.8020782986136E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed6"
+  type="fixed">
+  <origin
+    xyz="-0.208164516491345 0.00120010343630815 -0.0199999999999999"
+    rpy="0 0 0" />
+  <parent
+    link="RH_L_Connector_Below" />
+  <child
+    link="RH_HFE_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_HFE_Above">
+  <inertial>
+    <origin
+      xyz="-9.83976261053748E-12 0.000600051785377822 0.0109595490623483"
+      rpy="0 0 0" />
+    <mass
+      value="0.147575611715905" />
+    <inertia
+      ixx="2.12579582510449E-05"
+      ixy="1.7763734567438E-11"
+      ixz="-5.11179348881914E-14"
+      iyy="3.85166848508483E-05"
+      iyz="1.76688151191961E-13"
+      izz="2.80207829861361E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Above.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.168627450980392 0.168627450980392 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Above.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed8"
+  type="fixed">
+  <origin
+    xyz="-0.00171451649134521 0 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="RH_L_Connector_Below" />
+  <child
+    link="RH_HFE_Above" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_HFE_Below">
+  <inertial>
+    <origin
+      xyz="0.00179434378588409 8.21884249496718E-10 -0.118546756611554"
+      rpy="0 0 0" />
+    <mass
+      value="0.757663069005639" />
+    <inertia
+      ixx="0.00326332121209176"
+      ixy="-7.06627483207968E-07"
+      ixz="1.33796298605684E-05"
+      iyy="0.00291089859220615"
+      iyz="7.26627172294031E-08"
+      izz="0.00078934763344955" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Below.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_HFE_Below.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_HFE_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HFE_Above" />
+  <child
+    link="RH_HFE_Below" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Motor_1">
+  <inertial>
+    <origin
+      xyz="2.84694276911183E-05 -0.0172464421387718 8.28830574507028E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335703" />
+    <inertia
+      ixx="8.64771098206454E-05"
+      ixy="2.13351298975178E-08"
+      ixz="6.80488236757552E-09"
+      iyy="8.91906195308005E-05"
+      iyz="5.08537585712449E-09"
+      izz="6.7213817000714E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed9"
+  type="fixed">
+  <origin
+    xyz="0 -0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HFE_Below" />
+  <child
+    link="RH_Motor_1" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Capstan_1">
+  <inertial>
+    <origin
+      xyz="3.76448143253175E-17 0.000212910430571603 6.93889390390723E-18"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.71547713132994E-20"
+      ixz="1.08742395552527E-21"
+      iyy="8.59504262778746E-06"
+      iyz="1.66244094728619E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_1.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_1.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Motor_1_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_Motor_1" />
+  <child
+    link="RH_Capstan_1" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Motor_2">
+  <inertial>
+    <origin
+      xyz="-2.84694276911007E-05 0.0172464421387717 8.2883057450911E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335703" />
+    <inertia
+      ixx="8.64771098206452E-05"
+      ixy="2.13351298974955E-08"
+      ixz="-6.80488236763334E-09"
+      iyy="8.91906195308005E-05"
+      iyz="-5.08537585714134E-09"
+      izz="6.72138170007139E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed10"
+  type="fixed">
+  <origin
+    xyz="0 0.0455 -0.0475"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HFE_Below" />
+  <child
+    link="RH_Motor_2" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Capstan_2">
+  <inertial>
+    <origin
+      xyz="-4.46515537405459E-17 -0.000212910430571606 -6.93889390390723E-18"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.60765741447297E-20"
+      ixz="-1.70519141988728E-21"
+      iyy="8.59504262778746E-06"
+      iyz="1.90986640358609E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_2.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_2.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Motor_2_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_Motor_2" />
+  <child
+    link="RH_Capstan_2" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Motor_3">
+  <inertial>
+    <origin
+      xyz="2.84694277270512E-05 -0.017246442138899 8.28830576315998E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998336053" />
+    <inertia
+      ixx="8.64771098206673E-05"
+      ixy="2.13351299124234E-08"
+      ixz="6.80488233208718E-09"
+      iyy="8.9190619530887E-05"
+      iyz="5.08537586483973E-09"
+      izz="6.72138170007853E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed11"
+  type="fixed">
+  <origin
+    xyz="0 -0.0454999999999997 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HFE_Below" />
+  <child
+    link="RH_Motor_3" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Capstan_3">
+  <inertial>
+    <origin
+      xyz="3.66997311363045E-17 0.000212910430571601 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-2.75542240744915E-20"
+      ixz="1.82031790911216E-21"
+      iyy="8.59504262778746E-06"
+      iyz="1.78050908996467E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_3.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_3.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Motor_3_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_Motor_3" />
+  <child
+    link="RH_Capstan_3" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Motor_4">
+  <inertial>
+    <origin
+      xyz="-2.84694276911209E-05 0.0172464421387718 8.28830574514661E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.136452998335703" />
+    <inertia
+      ixx="8.64771098206453E-05"
+      ixy="2.13351298975048E-08"
+      ixz="-6.80488236762726E-09"
+      iyy="8.91906195308005E-05"
+      iyz="-5.08537585710314E-09"
+      izz="6.7213817000714E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed12"
+  type="fixed">
+  <origin
+    xyz="0 0.0454999999999999 -0.1675"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HFE_Below" />
+  <child
+    link="RH_Motor_4" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Capstan_4">
+  <inertial>
+    <origin
+      xyz="-2.42538873944591E-17 -0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-2.6672554496561E-20"
+      ixz="-3.38059040263686E-21"
+      iyy="8.59504262778745E-06"
+      iyz="1.79388615936177E-21"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_4.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_4.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Motor_4_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_Motor_4" />
+  <child
+    link="RH_Capstan_4" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_KFE_Datui">
+  <inertial>
+    <origin
+      xyz="-0.0257818274469396 3.0470312190288E-10 0.00939650209458728"
+      rpy="0 0 0" />
+    <mass
+      value="0.202362458638659" />
+    <inertia
+      ixx="0.000132325447511103"
+      ixy="1.36528546659981E-12"
+      ixz="1.34286855560455E-05"
+      iyy="7.51965034680202E-05"
+      iyz="5.29132692776072E-17"
+      izz="0.00017580289157642" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_KFE_Datui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_KFE_Datui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed13"
+  type="fixed">
+  <origin
+    xyz="0.0324999999999999 0 -0.221126066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RH_HFE_Below" />
+  <child
+    link="RH_KFE_Datui" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_KFE_Diaobi">
+  <inertial>
+    <origin
+      xyz="-0.00476532092562274 -9.4481443753062E-18 -2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.943955315785952" />
+    <inertia
+      ixx="0.000558068791355092"
+      ixy="-2.97884443948503E-18"
+      ixz="3.86339464986888E-18"
+      iyy="0.00782246388845469"
+      iyz="-2.81221778269262E-19"
+      izz="0.00834209266816599" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_KFE_Diaobi.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_KFE_Diaobi.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_KFE_Diaobi_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_KFE_Datui" />
+  <child
+    link="RH_KFE_Diaobi" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="5000"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Diaobi_Front">
+  <inertial>
+    <origin
+      xyz="-0.4 -0.0125000000000002 -0.0464987243569578"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="1.43583393892454E-19"
+      ixz="1.44002087006007E-23"
+      iyy="6.54564446044404E-06"
+      iyz="-1.42550377171952E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Diaobi_Front.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Diaobi_Front.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed14"
+  type="fixed">
+  <origin
+    xyz="0.2 0.0125000000000001 0.0464987243569579"
+    rpy="0 0 0" />
+  <parent
+    link="RH_KFE_Diaobi" />
+  <child
+    link="RH_Diaobi_Front" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Diaobi_Behind">
+  <inertial>
+    <origin
+      xyz="0 -1.32860127036638E-17 2.77555756156289E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.163172262197015" />
+    <inertia
+      ixx="0.000257591359339739"
+      ixy="-1.05540517387078E-19"
+      ixz="7.29640766734117E-23"
+      iyy="6.54564446044403E-06"
+      iyz="-1.37275457705922E-19"
+      izz="0.000257591359339739" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Diaobi_Behind.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0 0.501960784313725 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Diaobi_Behind.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed15"
+  type="fixed">
+  <origin
+    xyz="0.2 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_KFE_Diaobi" />
+  <child
+    link="RH_Diaobi_Behind" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_KFE_Xiaotui">
+  <inertial>
+    <origin
+      xyz="-0.0313594836044593 -3.93512867691591E-17 -0.0941524543357563"
+      rpy="0 0 0" />
+    <mass
+      value="0.624300528757856" />
+    <inertia
+      ixx="0.00237261591954326"
+      ixy="-1.04413278809716E-19"
+      ixz="-8.629212019033E-06"
+      iyy="0.00212184695939608"
+      iyz="1.93251590556859E-19"
+      izz="0.00063870678864782" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_KFE_Xiaotui.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_KFE_Xiaotui.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_KFE_Xiaotui_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_KFE_Datui" />
+  <child
+    link="RH_KFE_Xiaotui" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Motor_5">
+  <inertial>
+    <origin
+      xyz="2.96146306425992E-05 -0.0180183215090429 8.62170871268608E-06"
+      rpy="0 0 0" />
+    <mass
+      value="0.131176337566422" />
+    <inertia
+      ixx="8.52311483882417E-05"
+      ixy="2.13351299124561E-08"
+      ixz="6.80488232888342E-09"
+      iyy="8.52073722372623E-05"
+      iyz="5.08537586502064E-09"
+      izz="6.24557711088418E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.270588235294118 1 0.929411764705882 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed16"
+  type="fixed">
+  <origin
+    xyz="-0.0325000000001289 -0.0454999999999998 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RH_KFE_Xiaotui" />
+  <child
+    link="RH_Motor_5" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Capstan_5">
+  <inertial>
+    <origin
+      xyz="4.11184786936018E-17 0.000212910430571603 0"
+      rpy="0 0 0" />
+    <mass
+      value="0.037824866213923" />
+    <inertia
+      ixx="4.94123760009558E-06"
+      ixy="-6.01035242465377E-22"
+      ixz="1.21014751622026E-20"
+      iyy="8.59504262778747E-06"
+      iyz="3.97791878432396E-20"
+      izz="4.94123760009561E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_5.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_5.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Motor_5_Joint"
+  type="revolute">
+  <origin
+    xyz="0 0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_Motor_5" />
+  <child
+    link="RH_Capstan_5" />
+  <axis
+    xyz="0 1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Motor_6">
+  <inertial>
+    <origin
+      xyz="-2.91185421498602E-05 0.0180183225749763 -1.01632331126478E-05"
+      rpy="0 0 0" />
+    <mass
+      value="0.131176341166616" />
+    <inertia
+      ixx="8.53953173334779E-05"
+      ixy="2.03278271174379E-08"
+      ixz="-2.23549704734873E-07"
+      iyy="8.5207373733082E-05"
+      iyz="8.24211811190289E-09"
+      izz="6.22916037441665E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 1 1 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Motor_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed17"
+  type="fixed">
+  <origin
+    xyz="-0.0324999999999896 0.0455000000000031 -0.173626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RH_KFE_Xiaotui" />
+  <child
+    link="RH_Motor_6" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Capstan_6">
+  <inertial>
+    <origin
+      xyz="-3.8747798702135E-17 -0.000212910430571601 5.55111512312578E-17"
+      rpy="0 0 0" />
+    <mass
+      value="0.0378248662139229" />
+    <inertia
+      ixx="4.94123760009559E-06"
+      ixy="-1.02850097863627E-21"
+      ixz="6.12731123798228E-22"
+      iyy="8.59504262778745E-06"
+      iyz="-7.18235042292171E-22"
+      izz="4.94123760009559E-06" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_6.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Capstan_6.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Motor_6_Joint"
+  type="revolute">
+  <origin
+    xyz="0 -0.0305 0"
+    rpy="0 0 0" />
+  <parent
+    link="RH_Motor_6" />
+  <child
+    link="RH_Capstan_6" />
+  <axis
+    xyz="0 -1 0" />
+  <limit
+    lower="-100"
+    upper="100"
+    effort="100"
+    velocity="100" />
+  <mimic
+    joint="RH_HAA_Joint"
+    multiplier="1"
+    offset="0" />
+</joint>
+<link
+  name="RH_Foot_Connector">
+  <inertial>
+    <origin
+      xyz="0.00829919885296231 4.24434955479711E-10 -0.0112828904165752"
+      rpy="0 0 0" />
+    <mass
+      value="0.139447767552548" />
+    <inertia
+      ixx="5.13216221679282E-05"
+      ixy="-1.38520595303468E-12"
+      ixz="6.34704530979302E-06"
+      iyy="2.80504226978665E-05"
+      iyz="9.52188645345139E-11"
+      izz="6.15730851521786E-05" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Foot_Connector.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="1 0.549019607843137 0 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Foot_Connector.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed18"
+  type="fixed">
+  <origin
+    xyz="-0.03246562942307 0 -0.213626066314358"
+    rpy="0 0 0" />
+  <parent
+    link="RH_KFE_Xiaotui" />
+  <child
+    link="RH_Foot_Connector" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+<link
+  name="RH_Foot">
+  <inertial>
+    <origin
+      xyz="0.0037340577019785 -0.000255863477950871 0.0117351082412911"
+      rpy="0 0 0" />
+    <mass
+      value="0.266242556925293" />
+    <inertia
+      ixx="9.33398233450484E-05"
+      ixy="-6.0329647558344E-08"
+      ixz="2.67239059303291E-05"
+      iyy="9.76642768595375E-05"
+      iyz="-8.82432995378221E-08"
+      izz="0.000106860385565831" />
+  </inertial>
+  <visual>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Foot.dae" />
+    </geometry>
+    <material
+      name="">
+      <color
+        rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+    </material>
+  </visual>
+  <collision>
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <geometry>
+      <mesh
+        filename="meshes/RH_Foot.dae" />
+    </geometry>
+  </collision>
+</link>
+<joint
+  name="RH_Fixed20"
+  type="fixed">
+  <origin
+    xyz="-0.00960813281122834 0 -0.0464353485777582"
+    rpy="0 0 0" />
+  <parent
+    link="RH_Foot_Connector" />
+  <child
+    link="RH_Foot" />
+  <axis
+    xyz="0 0 0" />
+</joint>
+</robot>
